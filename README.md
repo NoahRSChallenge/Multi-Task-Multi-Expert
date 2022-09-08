@@ -5,7 +5,7 @@ This repo provides a benchmark data processing and evaluation for [Multi-task an
 ### Data
 [AliExpress Dataset](https://tianchi.aliyun.com/dataset/dataDetail?dataId=74690): AliExpress dataset collects user logs from real-world traffic in AliExpress. It contains two tasks -- CTR prediction and CVR prediction.
 
-To process the data, put the original data to ```./data``` and run
+To process the data, download original data and run
 ```
 python process_aliexpress.py --dataset_name NL
 ```
