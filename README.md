@@ -17,7 +17,7 @@ AUC score for CTR and CVR respectively.
 ### Baseline Results
 We train baseline models on each of the four datasets (NL, ES, FR, US), early stopping by CVR. We conduct experiments three times and report the results as follows. For details of the baseline implementation, please check [this](https://github.com/easezyc/Multitask-Recommendation-Library) nice multi-task library.
 
-|        Model       |            NL            |   ES   |        |        |   FR   |        |        |   US   |        |        |
+|        Model       |        |   NL   |        |   ES   |        |        |   FR   |        |        |   US   |        |        |
 |:------------------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 |                    |   CTR  |   CVR  |  CTCVR |   CTR  |   CVR  |  CTCVR |   CTR  |   CVR  |  CTCVR |   CTR  |   CVR  |  CTCVR |
 | Single model (DNN) | 0.7203 | 0.7815 | 0.8556 | 0.7252 | 0.8141 | 0.8832 | 0.7174 | 0.8071 | 0.8702 | 0.7058 | 0.8068 | 0.8637 |
