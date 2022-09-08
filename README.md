@@ -11,7 +11,7 @@ python process_aliexpress.py --dataset_name NL
 ```
 
 ### Evaluation
-AUC score for CTR and CVR respectively.
+AUC score for CTR, CVR, and CTCVR.
 
 
 ### Baseline Results
