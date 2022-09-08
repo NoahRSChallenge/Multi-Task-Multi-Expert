@@ -121,3 +121,5 @@ We train baseline models on each of the four datasets (NL, ES, FR, US), early st
 </table>
 
 
+### Misc
+Participants are encouraged to share the model checkpoints for us to verify the claimed results.
