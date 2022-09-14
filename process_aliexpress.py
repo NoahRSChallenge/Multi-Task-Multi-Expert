@@ -83,5 +83,5 @@ print('categorical col num: {}; numerical col num: {}'.format(len(category_cols)
 df_final_train = df_final_data.iloc[:num_train]
 df_final_test = df_final_data.iloc[num_train:]
 # 重新写入
-df_final_train.to_csv('./data/AliExpress_{}/train.csv'.format(dataset_name), index=0)
-df_final_test.to_csv('./data/AliExpress_{}/test.csv'.format(dataset_name), index=0)
+df_final_train.to_csv(data_path+'AliExpress_{}/train.csv'.format(dataset_name), index=0)
+df_final_test.to_csv(data_path+'AliExpress_{}/test.csv'.format(dataset_name), index=0)
