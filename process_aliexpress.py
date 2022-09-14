@@ -14,7 +14,7 @@ parser.add_argument('--dataset_name', default='NL', choices=['NL', 'ES', 'FR', '
 args = parser.parse_args()
 
 dataset_name = args.dataset_name
-data_path = '.'  # 数据存放路径
+data_path = './data/'  # 数据存放路径
 
 # 解压天池下载的数据集
 zip_file = zipfile.ZipFile(data_path + 'aliexpress_{}_datasets.zip'.format(dataset_name))
@@ -22,7 +22,7 @@ zip_list = zip_file.namelist()
 for f in zip_list:
     zip_file.extract(f, data_path)
 zip_file.close()
-os.rename(data_path + 'aliexpress_{}_datasets'.format(dataset_name), data_path + 'AliExpress_{}'.format(dataset_name))
+os.rename(data_path + '{}'.format(dataset_name), data_path + 'AliExpress_{}'.format(dataset_name))
 
 for item in ['_item_train.zip', '_item_test.zip', '_user_train.zip', '_user_test.zip']:
     zip_file = zipfile.ZipFile(
@@ -32,13 +32,13 @@ for item in ['_item_train.zip', '_item_test.zip', '_user_train.zip', '_user_test
         zip_file.extract(f, data_path + 'AliExpress_{}/'.format(dataset_name))
     zip_file.close()
 # 50和34 分别是item和user的col 看天池的数据集介绍即可理解
-df_train_item = pd.read_csv('./data/AliExpress_{}/{}_item_train.csv'.format(dataset_name, dataset_name.lower()),
+df_train_item = pd.read_csv(data_path+'AliExpress_{}/{}_item_train.csv'.format(dataset_name, dataset_name.lower()),
                             header=None, names=['item_{}'.format(i) for i in range(1, 50)])
-df_test_item = pd.read_csv('./data/AliExpress_{}/{}_item_test.csv'.format(dataset_name, dataset_name.lower()),
+df_test_item = pd.read_csv(data_path+'AliExpress_{}/{}_item_test.csv'.format(dataset_name, dataset_name.lower()),
                            header=None, names=['item_{}'.format(i) for i in range(1, 50)])
-df_train_user = pd.read_csv('./data/AliExpress_{}/{}_user_train.csv'.format(dataset_name, dataset_name.lower()),
+df_train_user = pd.read_csv(data_path+'AliExpress_{}/{}_user_train.csv'.format(dataset_name, dataset_name.lower()),
                             header=None, names=['user_{}'.format(i) for i in range(1, 34)])
-df_test_user = pd.read_csv('./data/AliExpress_{}/{}_user_test.csv'.format(dataset_name, dataset_name.lower()),
+df_test_user = pd.read_csv(data_path+'AliExpress_{}/{}_user_test.csv'.format(dataset_name, dataset_name.lower()),
                            header=None, names=['user_{}'.format(i) for i in range(1, 34)])
 # merge user和item 因为原始形式中 user和item是分开的
 df_test = pd.merge(df_test_user, df_test_item, left_on='user_1', right_on='item_1', how='inner')
